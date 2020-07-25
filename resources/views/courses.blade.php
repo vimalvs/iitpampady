@@ -26,62 +26,18 @@
 <!-- section -->
 <div class="section layout_padding">
 <div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-               <img class="img-responsive" src="storage/images/p1.png" alt="#" /> 
-               <h4>Mechanical Engineering</h4>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-                <img class="img-responsive" src="storage/images/p2.png" alt="#" />
-                <h4>EC</h4>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-                <img class="img-responsive" src="storage/images/p3.png" alt="#" />
-                <h4>Civil Engineering</h4>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-               <img class="img-responsive" src="storage/images/p1.png" alt="#" /> 
-               <h4>Mechanical Engineering</h4>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-                <img class="img-responsive" src="storage/images/p2.png" alt="#" />
-                <h4>EC</h4>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-                <img class="img-responsive" src="storage/images/p3.png" alt="#" />
-                <h4>Civil Engineering</h4>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-               <img class="img-responsive" src="storage/images/p1.png" alt="#" /> 
-               <h4>Mechanical Engineering</h4>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-                <img class="img-responsive" src="storage/images/p2.png" alt="#" />
-                <h4>EC</h4>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-                <img class="img-responsive" src="storage/images/p3.png" alt="#" />
-                <h4>Civil Engineering</h4>
-            </div>
-        </div>
-    </div>
+  <div class="row">
+    @foreach ($courses as $course)
+      <div class="col-md-4">
+          <div class="full blog_img_popular">
+             <a href="/courses/{{$course->pathname}}">
+              <img class="img-responsive" src="/storage/images/course/{{ $course->thumbnail }}" alt="{{$course->name}}" > 
+              <h4>{{$course->name}}</h4>
+            </a>
+          </div>
+      </div>
+    @endforeach
+  </div>   
 </div>
 </div>
 <!-- end section -->

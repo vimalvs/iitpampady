@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('auth.layout.app')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -8,9 +8,12 @@
 
                 <div class="card-body">
                     @if(count( $errors ) > 0)
+                    <span class="invalid-feedback" style="display: block;font-size: 16px;padding-bottom: 10px;">
                         @foreach ($errors->all() as $error)
-                           <h1>{{ $error }}</h1>
+                           <span>{{ $error }}</span><br>
                         @endforeach
+                    </span>
+                        
                     @endif          
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

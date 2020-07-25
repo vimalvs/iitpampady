@@ -6,7 +6,7 @@
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                  <div class="footer_blog">
                     <div class="full margin-bottom_30">
-                       <img src="/storage/images/footer_logo.png" alt="#" />
+                       <img src="/storage/images/footer-logo.jpg" alt="#" />
                      </div>
                      <div class="full white_fonts">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -19,11 +19,11 @@
                    <div class="footer_blog footer_menu white_fonts">
                             <h3>Quick links</h3>
                             <ul> 
-                              <li><a href="#">> Join Us</a></li>
-                              <li><a href="#">> Maintenance</a></li>
-                              <li><a href="#">> Language Packs</a></li>
-                              <li><a href="#">> LearnPress</a></li>
-                              <li><a href="#">> Release Status</a></li>
+                              <li><a href="#">> About Us</a></li>
+                              <li><a href="#">> Courses</a></li>
+                              <li><a href="#">> Gallery</a></li>
+                              <li><a href="#">> Contact Us</a></li>
+                              <li><a href="#">> News</a></li>
                             </ul>
                          </div>
                  </div>
@@ -34,7 +34,7 @@
                  <div class="footer_blog full white_fonts">
                              <h3>Contact us</h3>
                              <ul class="full">
-                               <li><img src="/storage/images/i5.png"><span>London 145<br>United Kingdom</span></li>
+                               <li><img src="/storage/images/i5.png"><span>Pampady<br>Kottayam</span></li>
                                <li><img src="/storage/images/i6.png"><span>demo@gmail.com</span></li>
                                <li><img src="/storage/images/i7.png"><span>+12586954775</span></li>
                              </ul>

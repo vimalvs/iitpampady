@@ -1,7 +1,6 @@
 @extends('view')
 @section('main-body-id', 'inner_page')
 @section('style')
-@section('style')
 <style>
 .table {
   border-collapse: collapse;
@@ -33,6 +32,11 @@
   font-size: 12px;
   font-style: italic;
 }
+.block{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 </style>
 @endsection
 @section('content')
@@ -62,41 +66,20 @@
       </tr>
     </thead>
     <tbody>
+      @foreach($arNews as $news)
       <tr>
         <td>
-          <a href="/storage/documents/test.pdf">Branch/Department/Fee category change for 2019 admissions students</a>
-          <span class="posted-date">Posted Date: 2020 June, 12</span>
+          @if ($news->pdf_url)
+          <a class="block" href="/storage/pdf/news/{{$news->pdf_url}}">{{$news->title}} <span class="posted-date">Posted Date: {{date($news->created_at)}}</span></a>
+          
+          @else
+          <a class="block" href="/news/{{$news->id}}">{{$news->title}} <span class="posted-date">Posted Date: {{date($news->created_at)}}</span></a>
+          @endif
         </td>
       </tr>
-      <tr>
-        <td>
-          <a href="/storage/documents/test.pdf">Branch/Department/Fee category change for 2019 admissions students</a>
-          <span class="posted-date">Posted Date: 2020 June, 12</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="/storage/documents/test.pdf">Branch/Department/Fee category change for 2019 admissions students</a>
-          <span class="posted-date">Posted Date: 2020 June, 12</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="/storage/documents/test.pdf">Branch/Department/Fee category change for 2019 admissions students</a>
-          <span class="posted-date">Posted Date: 2020 June, 12</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="/storage/documents/test.pdf">Branch/Department/Fee category change for 2019 admissions students</a>
-          <span class="posted-date">Posted Date: 2020 June, 12</span>
-        </td>
-      </tr>
+      @endforeach
     </tbody>
   </table>
 </div>
 </div>
-
-@endsection
-@section('script')
 @endsection

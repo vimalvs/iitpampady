@@ -37,62 +37,18 @@
 <!-- section -->
 <div class="section layout_padding">
 <div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-               <img class="img-responsive" src="/storage/images/p1.png" alt="#" /> 
-               <h5>Freshers Day 2020</h5>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-                <img class="img-responsive" src="/storage/images/p2.png" alt="#" />
-                <h5>Send Off Meeting Of Sri. xxxxxxxxx</h5>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-                <img class="img-responsive" src="/storage/images/p3.png" alt="#" />
-                <h5>Freshers Day 2019</h5>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-               <img class="img-responsive" src="/storage/images/p1.png" alt="#" /> 
-               <h5>Freshers Day 2018</h5>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-                <img class="img-responsive" src="/storage/images/p2.png" alt="#" />
-                <h5>Freshers Day 2017</h5>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-                <img class="img-responsive" src="/storage/images/p3.png" alt="#" />
-                <h5>Freshers Day 2016</h5>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-               <img class="img-responsive" src="/storage/images/p1.png" alt="#" /> 
-               <h5>Freshers Day 2018</h5>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-                <img class="img-responsive" src="/storage/images/p2.png" alt="#" />
-                <h5>EC</h5>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="full blog_img_popular">
-                <img class="img-responsive" src="/storage/images/p3.png" alt="#" />
-                <h5>Freshers Day 2000</h5>
-            </div>
-        </div>
-    </div>
+  <div class="row">
+    @foreach($arGallery as $gallery)
+     <div class="col-md-4">
+        <a href="/gallery/{{$gallery->id}}">
+          <div class="full blog_img_popular">
+            <img class="img-responsive" src="/storage/images/gallery/thumbnail/{{$gallery->thumbnail}}" alt="{{$gallery->title}}" /> 
+            <h5>{{$gallery->title}}</h5>
+          </div>
+        </a>
+      </div>
+    @endforeach
+  </div>
 </div>
 </div>
 <!-- end section -->

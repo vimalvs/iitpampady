@@ -1,6 +1,31 @@
 @extends('view')
 @section('main-body-id', 'inner_page')
 @section('style')
+<style>
+.img-fill img {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+.img-fill {
+  position: relative;
+  background: #ccc;
+  padding: 10px;
+  margin-bottom: 1em;
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+.photo-count {
+  background: rgba(175,44,44,.6);
+  padding: 4px 7px;
+  color: #fff;
+  position: absolute;
+  font-size: .875rem;
+  border-radius: 5px;
+  z-index: 3;
+  top: 10px;
+  left: 10px;
+}
+</style>
 @section('content')
 <!-- section -->
     
@@ -20,95 +45,17 @@
 
 
 <!-- section -->
-<div class="section layout_padding padding_bottom-0">
+<div class="section layout_padding ">
 <div class="container">
-    <div class="row">
-        <figure class="col-md-4">
-            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg" data-size="1600x1067">
-              <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(117).jpg"
-                class="img-fluid">
-            </a>
-        </figure>
-
-        <figure class="col-md-4">
-            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg" data-size="1600x1067">
-              <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(98).jpg"
-                class="img-fluid" />
-            </a>
-        </figure>
-
-        <figure class="col-md-4">
-            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg" data-size="1600x1067">
-              <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(131).jpg"
-                class="img-fluid" />
-            </a>
-        </figure>
-
-        <figure class="col-md-4">
-            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(123).jpg" data-size="1600x1067">
-              <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(123).jpg"
-                class="img-fluid" />
-            </a>
-        </figure>
-
-        <figure class="col-md-4">
-            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118).jpg" data-size="1600x1067">
-              <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(118).jpg"
-                class="img-fluid" />
-            </a>
-        </figure>
-
-        <figure class="col-md-4">
-            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(128).jpg" data-size="1600x1067">
-              <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(128).jpg"
-                class="img-fluid" />
-            </a>
-        </figure>
-         <figure class="col-md-4">
-            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg" data-size="1600x1067">
-              <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(117).jpg"
-                class="img-fluid">
-            </a>
-        </figure>
-
-        <figure class="col-md-4">
-            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg" data-size="1600x1067">
-              <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(98).jpg"
-                class="img-fluid" />
-            </a>
-        </figure>
-
-        <figure class="col-md-4">
-            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg" data-size="1600x1067">
-              <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(131).jpg"
-                class="img-fluid" />
-            </a>
-        </figure>
-
-        <figure class="col-md-4">
-            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(123).jpg" data-size="1600x1067">
-              <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(123).jpg"
-                class="img-fluid" />
-            </a>
-        </figure>
-
-        <figure class="col-md-4">
-            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118).jpg" data-size="1600x1067">
-              <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(118).jpg"
-                class="img-fluid" />
-            </a>
-        </figure>
-
-        <figure class="col-md-4">
-            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(128).jpg" data-size="1600x1067">
-              <img alt="picture" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(128).jpg"
-                class="img-fluid" />
-            </a>
-        </figure>
-    </div>
+  <?php $count = 1; $totalCount = count($galleryImages); ?>
+  @foreach($galleryImages as $image)
+    <div class="img-fill">
+      <span class="photo-count">{{$count}} / {{$totalCount}}</span>
+      <img src="/storage/images/gallery/uploads/{{$image->image_pathname}}" alt="Kitten {{$image->id}}"></div>
+      <?php $count++?>
+  @endforeach
 </div>            
 </div>
 <!-- end section -->
 @endsection
-@section('script')
-@endsection
+
